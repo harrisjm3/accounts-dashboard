@@ -16,6 +16,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Example Code</h1>
+          <a href='https://github.com/harrisjm3/accounts-dashboard' className="App-title">
+            https://github.com/harrisjm3/accounts-dashboard
+          </a>
         </header>
         <div className="App-intro">
           <Holdings holdingsData={holdingsData.Positions} />
