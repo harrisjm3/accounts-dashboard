@@ -31,7 +31,7 @@ class Accounts extends Component {
     for(let type in accountTypes) {
       let sum = this._getSumByType(accountTypes[type]);
       retval.push({ 'type': accountTypes[type], 'percentTotal': this._getPercTotal(sum),
-      'sum':  sum});
+      'sum':  sum.toFixed(2)});
     }
     return retval;
   }
@@ -39,7 +39,7 @@ class Accounts extends Component {
   _getPercTotal(sum) {
     let retval = 0;
     retval = sum/this.state.total;
-    return retval.toFixed(2);
+    return retval.toFixed(4);
   }
 
   _getSumByType(accountType) {
@@ -58,7 +58,7 @@ class Accounts extends Component {
       }
     }
 
-    return retval.toFixed(2);
+    return retval;
   }
 
   _getTotal() {
@@ -67,7 +67,7 @@ class Accounts extends Component {
       let obj = this.props.holdingsData[hold];
       totalVal += obj.price * obj.quantity;
     }
-    this.setState({total: totalVal.toFixed(2)});
+    this.setState({total: totalVal});
   }
 
   render() {
